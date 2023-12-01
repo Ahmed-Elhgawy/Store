@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- local style sheet  -->
+    <link rel="stylesheet" href="{% static 'store/css/style.css' %}">
+    <title>Store</title>
+</head>
+<body>
+    <div class="container container-1">
+
+        <!-- for mobile -->
+        <div class="mobile">
+            <div class="bars">
+                <section class="section sec bar-sec">
+                    <a id="bar" href="#"><i class="fa-solid fa-bars"></i></i></a>
+                </section>
+            </div>
+            <div class="mobile-logo">
+                <section class="section">
+                    <div class="text-block">S</div>
+                </section>
+                <h2 class="heading">Store</h2>
+            </div>
+        </div>        
+        <!-- ---------- -->
+
+        <div class="left">
+            <!-- back to store btn -->
+            <section class="section sec">
+                <a href="{% url 'store' %}"><i class="fa-solid fa-arrow-left"></i></a>
+            </section>
+            <!-- Search btn -->
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="middle">
+            <section class="section">
+                <div class="text-block">S</div>
+            </section>
+            <h2 class="heading">Store</h2>
+        </div>
+        <div class="right">
+            <!-- Change Theme btn -->
+            <section class="section sec dark-mode">
+                <a href="#"><i class="fa-regular fa-moon"></i></a>
+            </section>
+            <!-- Cart btn -->
+            <section class="section sec">
+                <a href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping"></i></a>
+            </section>     
+        </div>
+    </div>
+    
+    <div class="container">
+
+        <!-- for mobile -->
+        <div id="side-bar" class="sidebar">
+
+            <div class="chooses">
+                <a href="{% url 'store' %}" class="shop">
+                    <section class="section sec">
+                        <i class="fa-solid fa-store"></i>
+                    </section>
+                    <h6 class="sidebar-label">Store</h6>
+                </a>
+                <a href="{% url 'cart' %}" class="mobile-cart-logo">
+                    <section class="section sec">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </section>
+                    <h6 class="sidebar-label">Shopping Cart</h6>
+                </a>
+                <a href="{% url 'smart phone' %}" class="smart-phone">
+                    <section class="section sec">
+                        <i class="fa-solid fa-mobile"></i>
+                    </section>
+                    <h6 class="sidebar-label">Smart Phones</h6>
+                </a>
+                <a href="{% url 'electrical device' %}" class="devices">
+                    <section class="section sec">
+                        <i class="fa-solid fa-tv"></i></i>
+                    </section>
+                    <h6 class="sidebar-label">Household Devices</h6>
+                </a>
+                <a href="{% url 'furniture' %}" class="furniture">
+                    <section class="section sec">
+                        <i class="fa-solid fa-couch"></i>
+                    </section>
+                    <h6 class="sidebar-label">Furnitures</h6>
+                </a>
+                <a href="{% url 'clothes' %}" class="clothes active">
+                    <section class="section sec">
+                        <i class="fa-solid fa-shirt"></i>
+                    </section>
+                    <h6 class="sidebar-label">Clothes</h6>
+                </a> 
+            </div>
+            
+            <a href="{% url 'logout' %}" class="logout">
+                <section class="section sec">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </section>
+                <h6 class="sidebar-label">Logout</h6>
+            </a>
+        </div>       
+        <!-- ---------- -->
+
+        <div class="label">
+            <h2>Clothes</h2>
+        </div>
+
+        <hr class="hr border border-2"></hr>
+
+        <div class="container">
+            <div class="row" id="class">
+                {% for i in class_4 %}
+                <div class="col">
+                    <div class="class-card">
+                        <img class="class-image" src="{% static 'store/images/'|add:i.image %}" alt="product image">
+
+                        <div class="div-block-2">
+                            <h5 class="class-product-name">{{i.name}}</h5>
+                            <div class="class-product-desc">{{i.desc}}</div>
+                        </div>
+
+                        <hr class="border border-2 border-success"></hr>
+
+                        <div class="div-block">
+                            <div class="class-price">Price: {{i.price}} $</div>
+                            <div class="add-to-cart"><a href="{{i.add_to_cart}}"><i class="fa-solid fa-cart-plus"></i></a></div>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class=" container container-3">
+
+        <!-- for mobile-->
+        <div class="mobile">
+            <div class="bars">
+                <p class="signture mobile-signture">By Ahmed Elhgawy</p>
+            </div>
+            <div class="social">
+                <div>
+                    <p class="signture">Follow us: </p>
+                </div>
+                <div class="bottom">
+                    <!-- facebook btn -->
+                    <section class="section sec social-media">
+                        <a href="#"><i class="fa-brands fa-facebook fa-sm"></i></a>
+                    </section>
+                    <!-- linkedin btn -->
+                    <section class="section sec social-media">
+                        <a href="#"><i class="fa-brands fa-linkedin fa-sm"></i></a>
+                    </section>
+                    <!-- twitter btn -->
+                    <section class="section sec social-media">
+                        <a href="#"><i class="fa-brands fa-twitter fa-sm"></i></a>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- ---------- -->
+
+        <div class="right">
+            <p class="signture">By Ahmed Elhgawy</p>
+        </div>
+        <div class="middle last-middle">
+            <section class="section">
+                <div class="text-block">S</div>
+            </section>
+            <h2 class="heading foot">Store</h2>
+        </div>
+        <div class="left social">
+            <div>
+                <p class="signture">Follow us: </p>
+            </div>
+            <div class="bottom">
+                <!-- facebook btn -->
+                <section class="section sec social-media">
+                    <a href="#"><i class="fa-brands fa-facebook fa-sm"></i></a>
+                </section>
+                <!-- linkedin btn -->
+                <section class="section sec social-media">
+                    <a href="#"><i class="fa-brands fa-linkedin fa-sm"></i></a>
+                </section>
+                <!-- twitter btn -->
+                <section class="section sec social-media">
+                    <a href="#"><i class="fa-brands fa-twitter fa-sm"></i></a>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/5e5f756e37.js" crossorigin="anonymous"></script>
+
+    <!-- BootStrap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Slick JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- script source -->
+    <script src="{% static 'store/js/main.js' %}"></script>
+</body>
+</html>

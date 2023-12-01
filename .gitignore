@@ -1,0 +1,5 @@
+K8s/.terraform/
+K8s/*.tfstate
+K8s/.terraform.lock.hcl
+src/.idea/
+src/.venv

@@ -1,0 +1,49 @@
+:root {
+    --green-color: #426B1F;
+    --white-color: #f9f9f9;
+    --black-color: #000000;
+    --active-color: #cccccc;
+    --card-color: #FAFAF5;
+    --border-color: #e6e6e6;
+
+    --card-sh: 8px 6px 10px 3px rgba(0, 0, 0, 0.2);
+    --box-sh: 0 7px 5px rgba(200, 200, 200, 0.2);
+    --text-sh: 0 11px 5px rgba(200, 200, 200, 0.2);
+}
+
+
+body {
+    height: 100svh;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    background: linear-gradient(to top right, var(--white-color) 0%, var(--green-color) 100%);
+    background-repeat: no-repeat;
+    font-family: 'Segoe', Tahoma, Verdana, sans-serif;
+    position: relative;
+}
+a {
+    color: var(--green-color);
+    text-decoration: none;
+}
+span, ul {
+    display: none;
+}
+
+.login-container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.submit {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+}
+
+.nav {
+    margin-bottom: 5px;
+}
